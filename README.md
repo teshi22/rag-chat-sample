@@ -2,6 +2,8 @@
 
 Azure AI Foundry Agent を Streamlit UI から操作するサンプルです。ログイン付きのシンプルなチャット画面を提供し、Azure AI Project と接続して回答を生成します。
 
+![チャットUIのスクリーンショット](images/app.png)
+
 ## 必要な環境
 
 - Python 3.10 以降
@@ -53,7 +55,7 @@ powershell.exe -ExecutionPolicy Bypass -File scripts\deploy.ps1
 - App Service のアプリ設定更新
   - `APP_LOGIN_USERNAME`, `APP_LOGIN_PASSWORD`
   - `AZURE_AI_PROJECT_ENDPOINT`, `AZURE_AI_AGENT_NAME`
-- - `SCM_DO_BUILD_DURING_DEPLOYMENT`, `WEBSITES_PORT`
+  - `SCM_DO_BUILD_DURING_DEPLOYMENT`, `WEBSITES_PORT`
 - スタートアップコマンド（`bash scripts/startup.sh`）の設定
 - `az webapp deploy`による Zip Deploy
 
