@@ -3,6 +3,7 @@
 azure-ai-projects==2.0.0b2
 openai==2.8.1
 azure-identity
+streamlit-authenticator
 #azure-search-documents==11.6.0
 #azure-cosmos==4.14.2
 python-dotenv
