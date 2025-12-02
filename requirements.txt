@@ -1,0 +1,9 @@
+#agent-framework==1.0.0b251120
+#agent-framework-devui==1.0.0b251120
+azure-ai-projects==2.0.0b2
+openai==2.8.1
+azure-identity
+#azure-search-documents==11.6.0
+#azure-cosmos==4.14.2
+python-dotenv
+streamlit
