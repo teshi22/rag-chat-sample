@@ -6,7 +6,7 @@ Azure AI Foundry Agent を Streamlit UI から操作するサンプルです。�
 
 ## 必要な環境
 
-- Python 3.10 以降
+- Python3.10 以降
 - `pip install -r requirements.txt` で依存を導入
 - `.env_template` を `.env` にコピーして以下の値を設定（ローカル実行・デプロイ共通）
   - `APP_LOGIN_USERNAME` / `APP_LOGIN_PASSWORD`: Streamlit ログイン用の認証情報
