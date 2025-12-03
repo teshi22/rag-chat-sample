@@ -60,3 +60,24 @@ powershell.exe -ExecutionPolicy Bypass -File scripts\deploy.ps1
 - `az webapp deploy`による Zip Deploy
 
 両スクリプトともログ出力とエラーメッセージは日本語化済みです。必要に応じて `.env` の値や `scripts/deploy.*` 内の設定を変更してご利用ください。
+
+## エージェント作成スクリプト（`scripts/create_agent.py`）
+
+Azure AI Foundry 側で MCP 接続付きエージェントを作成・更新する補助スクリプトです。実行すると以下を順に行います。
+
+1. `scripts/.env`の値を読み込み、指定された URL/Resource ID/エージェント名を検証
+2. 管理 API に対して Project Managed Identity 接続を作成（存在する場合は更新）
+3. Azure AI Projects SDK を使って MCP ツールを紐付けたエージェントの新バージョンを作成
+
+### 使い方
+
+1. `scripts/.env_template` を `scripts/.env` にコピーし、各値を自分のリソース名に置き換えます。
+2. ルート直下で依存をインストールしていない場合は `pip install -r requirements.txt` を実行します。
+3. 下記コマンドでスクリプトを起動します。
+
+```bash
+cd scripts
+python create_agent.py
+```
+
+Azure CLI などですでにログイン済みで、Managed Identity かサービスプリンシパルに適切な権限がある必要があります。`PROJECT_CONNECTION_NAME`を`.env`で省略した場合は、自動的に 8 文字の UUID 片が利用されます。
