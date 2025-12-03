@@ -7,6 +7,9 @@ from typing import Any, Dict, List
 import streamlit as st
 from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
 
 # 単純なベーシック認証用の資格情報（環境変数で上書き可能）
 AUTH_USERNAME = os.environ.get("APP_LOGIN_USERNAME", "admin")
