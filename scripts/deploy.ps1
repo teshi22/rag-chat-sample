@@ -28,7 +28,7 @@ Get-Content $EnvFile | ForEach-Object {
 
 $requiredVars = @('APP_LOGIN_USERNAME','APP_LOGIN_PASSWORD','AZURE_AI_PROJECT_ENDPOINT','AZURE_AI_AGENT_NAME')
 foreach ($var in $requiredVars) {
-    if ([string]::IsNullOrWhiteSpace($env:$var)) {
+    if ([string]::IsNullOrWhiteSpace([Environment]::GetEnvironmentVariable($var))) {
         Write-Error "[エラー] $var が $EnvFile に設定されていません。"
     }
 }
