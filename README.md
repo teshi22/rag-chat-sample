@@ -39,13 +39,27 @@ chmod +x scripts/deploy.sh
 ### Windows: `scripts/deploy.ps1`
 
 1. PowerShell で`scripts/deploy.ps1`を開き、`$RG` / `$Loc` / `$WebApp`を自分のリソース名に合わせる
-2. 必要であれば実行ポリシーを緩和し、PowerShell（推奨: PowerShell 7/pwsh）から実行
+2. 以下のいずれかの方法で実行
+
+**方法 1: コマンドプロンプトまたはエクスプローラーから実行（推奨）**
+
+```cmd
+scripts\deploy.cmd
+```
+
+**方法 2: PowerShell から直接実行**
+
+```powershell
+powershell.exe -ExecutionPolicy RemoteSigned -File scripts\deploy.ps1
+```
+
+**方法 3: PowerShell 7 (pwsh) がインストールされている場合**
 
 ```powershell
 pwsh -File scripts/deploy.ps1
-# または Windows PowerShell:
-powershell.exe -ExecutionPolicy Bypass -File scripts\deploy.ps1
 ```
+
+> **ヒント**: `pwsh` コマンドが見つからないエラーが発生した場合は、方法 1 または方法 2 を使用してください。PowerShell 7 のインストールは任意です。
 
 ### 両スクリプトが実行する内容
 
